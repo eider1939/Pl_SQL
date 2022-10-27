@@ -44,7 +44,7 @@ descendente por peso, para cada viaje requerido, llenando primero los camiones q
 soporten más peso.
 
 <div align="center">
-  <img src="\img\img_ejemplo_punto_I.PNG" width="600" height="300"/>
+  <img src="./img/img_ejemplo_punto_I.PNG" width="600" height="300"/>
 </div>
 
 Ejemplo: para el pedido 1 que tiene dos detalles. Suponga que solo hay dos camiones (los
