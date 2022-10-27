@@ -61,3 +61,37 @@ En el segundo viaje:
 con la unidad que faltaba por llevar del producto 1.
 El programa debe imprimir entonces todos los viajes requeridos para satisfacer el pedido,
 se debe mostrar en cada viaje, cada camión cuantos y que productos lleva.
+
+## Punto 2
+La empresa de Buses YY maneja rutas entre ciudades.
+Sea la tabla:
+CREATE TABLE rutadirecta(
+ciudadinicio VARCHAR2(10),
+ciudadfin VARCHAR2(10),
+costo NUMBER(8) NOT NULL CHECK (costo > 0),
+PRIMARY KEY(ciudadinicio, ciudadfin),
+CHECK (ciudadinicio <> ciudadfin)
+);
+
+### Punto 2.1
+Desarrollar un trigger de inserción (no considere actualizaciones ni borrados) que
+haga cumplir la siguiente regla de negocio:
+ Toda ruta directa entre dos ciudades debe tener un costo menor o igual que la ruta
+indirecta de menor costo entre esas dos ciudades.
+Nota: en una ruta indirecta no hay ciudades repetidas.
+Ejemplo:
+<div align="center">
+  <img src="./img/img_ejemplo_punto_II.PNG" width="600" height="300"/>
+</div>
+Supóngase que se va a ingresar la ruta directa (A, F, 20).
+Com la ruta directa de A a F debe tener un costo menor o igual a $15, que es lo que cuesta
+ir de A a F por la ruta ABDF; y por lo tanto, la ruta directa a ingresar de A a F con un
+costo de $20 se debe rechazar.
+
+### Punto 2.2
+Desarrollar un trigger de inserción (no considere actualizaciones ni borrados) tal
+que cuando se vaya a insertar una ruta directa controle que entre ningún par de ciudades
+se generen más de tres rutas indirectas.
+Así, en el ejemplo anterior, si se intenta insertar una ruta directa de C hacia D, esta inserción
+se debe rechazar porque entre A y F ya hay tres rutas indirectas (ABDF, ACEF
+y ACBDF).
