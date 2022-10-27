@@ -93,5 +93,5 @@ Desarrollar un trigger de inserción (no considere actualizaciones ni borrados) 
 que cuando se vaya a insertar una ruta directa controle que entre ningún par de ciudades
 se generen más de tres rutas indirectas.
 Así, en el ejemplo anterior, si se intenta insertar una ruta directa de C hacia D, esta inserción
-se debe rechazar porque entre A y F ya hay tres rutas indirectas (ABDF, ACEF
-y ACBDF).
+se debe rechazar porque entre A y F ya hay tres rutas indirectas (A->B->D->F, A->C->E->F
+y A->C->B->D->F).
